@@ -39,7 +39,7 @@
 {
     self.clipsToBounds = YES;
     
-    _circleRatio = .9;
+    _circleRatio = .8;
     _dotRatio = 1. / 9.;
 
     
@@ -58,7 +58,9 @@
         _circleView = [UIView new];
         [self addSubview:_circleView];
         
-        _circleView.backgroundColor = [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5];
+        _circleView.backgroundColor = [UIColor clearColor];
+        _circleView.layer.borderWidth = 2.0;
+        _circleView.layer.borderColor = [UIColor whiteColor].CGColor;
         _circleView.hidden = YES;
 
         _circleView.layer.rasterizationScale = [UIScreen mainScreen].scale;
