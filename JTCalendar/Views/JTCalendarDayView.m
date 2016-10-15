@@ -41,6 +41,18 @@
     
     _circleRatio = .9;
     _dotRatio = 1. / 9.;
+
+    
+    {
+        _rectangleView = [UIView new];
+        [self addSubview:_rectangleView];
+        
+        _rectangleView.backgroundColor = [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5];
+        _rectangleView.hidden = YES;
+        
+        _rectangleView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        _rectangleView.layer.shouldRasterize = YES;
+    }
     
     {
         _circleView = [UIView new];
@@ -89,12 +101,16 @@
     
     CGFloat sizeCircle = MIN(self.frame.size.width, self.frame.size.height);
     CGFloat sizeDot = sizeCircle;
+    CGFloat paddingRectangle = 1.0f;
     
     sizeCircle = sizeCircle * _circleRatio;
     sizeDot = sizeDot * _dotRatio;
     
     sizeCircle = roundf(sizeCircle);
     sizeDot = roundf(sizeDot);
+    
+    _rectangleView.frame = CGRectMake(0, 0, self.frame.size.width - 2 * paddingRectangle, self.frame.size.height - 2 * paddingRectangle);
+    _rectangleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
     
     _circleView.frame = CGRectMake(0, 0, sizeCircle, sizeCircle);
     _circleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
