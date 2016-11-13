@@ -41,15 +41,14 @@
     
     _circleRatio = .85;
     _dotRatio = 1. / 9.;
-
-    self.layer.borderWidth = 2.0;
+    self.backgroundColor = [UIColor clearColor];
     
     {
         _rectangleView = [UIView new];
         [self addSubview:_rectangleView];
         
         _rectangleView.backgroundColor = [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5];
-        _rectangleView.hidden = NO;
+        _rectangleView.hidden = YES;
         
         _rectangleView.layer.rasterizationScale = [UIScreen mainScreen].scale;
         _rectangleView.layer.shouldRasterize = YES;
@@ -60,7 +59,7 @@
         [self addSubview:_circleView];
         
         _circleView.backgroundColor = [UIColor clearColor];
-        _circleView.layer.borderWidth = 1.0;
+        _circleView.layer.borderWidth = 0.0;
         _circleView.layer.borderColor = [UIColor whiteColor].CGColor;
         _circleView.hidden = NO;
 
