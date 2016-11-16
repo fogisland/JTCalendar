@@ -39,7 +39,7 @@
 {
     self.clipsToBounds = YES;
     
-    _circleRatio = .85;
+    _circleRatio = .95;
     _dotRatio = 1. / 9.;
     self.backgroundColor = [UIColor clearColor];
     
@@ -116,7 +116,8 @@
     
     _circleView.frame = CGRectMake(0, 0, sizeCircle, sizeCircle);
     _circleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
-    _circleView.layer.cornerRadius = sizeCircle / 2.;
+    // _circleView.layer.cornerRadius = sizeCircle / 2.;
+    _circleView.layer.cornerRadius = 1;
     
     _dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
     _dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) +sizeDot * 2.5);
