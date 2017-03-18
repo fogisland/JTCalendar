@@ -143,8 +143,8 @@
     _backTopTextLabel.frame = CGRectMake(0, 0, _backCircleView.bounds.size.width, _backCircleView.bounds.size.height / 3);
     _backBottomTextLabel.frame = CGRectMake(0, _backCircleView.bounds.size.height / 3, _backCircleView.bounds.size.width, _backCircleView.bounds.size.height / 3 * 2);
     
-    CGFloat seperatorPadding = 3.0;
-    _backSeperateLine.frame = CGRectMake(seperatorPadding, _backCircleView.bounds.size.height / 3, _backCircleView.bounds.size.width - seperatorPadding * 2, 0.5);
+    CGFloat seperatorPadding = 8.0;
+    _backSeperateLine.frame = CGRectMake(seperatorPadding, _backCircleView.bounds.size.height / 3 + 2, _backCircleView.bounds.size.width - seperatorPadding * 2, 0.5);
 }
 
 - (void)setDate:(NSDate *)date
