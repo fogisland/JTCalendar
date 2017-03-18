@@ -23,9 +23,11 @@
 @property (nonatomic, readonly) UILabel *backTopTextLabel;
 @property (nonatomic, readonly) UIView *backSeperateLine;
 @property (nonatomic, readonly) UILabel *backBottomTextLabel;
+@property (nonatomic, readonly) UIView *backDotView;
 
 @property (nonatomic) CGFloat circleRatio;
 @property (nonatomic) CGFloat dotRatio;
+@property (nonatomic) CGFloat backDotRatio;
 
 @property (nonatomic) BOOL isFromAnotherMonth;
 

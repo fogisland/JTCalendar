@@ -40,7 +40,8 @@
     self.clipsToBounds = YES;
     
     _circleRatio = .95;
-    _dotRatio = 1. / 9.;
+    _dotRatio = 1. / 12.;
+    _backDotRatio = 1. / 15.;
     self.backgroundColor = [UIColor clearColor];
     
     {
@@ -76,6 +77,16 @@
         [_backCircleView addSubview:_backSeperateLine];
         _backSeperateLine.backgroundColor = [UIColor blackColor];
     }
+    {
+        _backDotView = [UIView new];
+        [_backCircleView addSubview:_backDotView];
+        
+        _backDotView.backgroundColor = [UIColor whiteColor];
+        _backDotView.hidden = YES;
+        
+        _backDotView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        _backDotView.layer.shouldRasterize = YES;
+    }
     
     {
         _circleView = [UIView new];
@@ -93,7 +104,7 @@
         _dotView = [UIView new];
         [_circleView addSubview:_dotView];
         
-        _dotView.backgroundColor = [UIColor redColor];
+        _dotView.backgroundColor = [UIColor whiteColor];
         _dotView.hidden = YES;
 
         _dotView.layer.rasterizationScale = [UIScreen mainScreen].scale;
@@ -122,9 +133,11 @@
             
     CGFloat sizeCircle = MIN(self.frame.size.width, self.frame.size.height);
     CGFloat sizeDot = sizeCircle;
+    CGFloat backSizeDot = sizeCircle;
     
     sizeCircle = sizeCircle * _circleRatio;
     sizeDot = sizeDot * _dotRatio;
+    backSizeDot = backSizeDot * _backDotRatio;
     
     sizeCircle = roundf(sizeCircle);
     sizeDot = roundf(sizeDot);
@@ -133,13 +146,16 @@
     _circleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
     _circleView.layer.cornerRadius = 1;
     _dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
-    _dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) +sizeDot * 2.5);
+    _dotView.center = CGPointMake(self.frame.size.width / 2. - 1, self.frame.size.height - sizeDot * 1.5 - 4);
     _dotView.layer.cornerRadius = sizeDot / 2.;
     _textLabel.frame = _circleView.bounds;
     
     _backCircleView.frame = CGRectMake(0, 0, sizeCircle, sizeCircle);
     _backCircleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
     _backCircleView.layer.cornerRadius = 1;
+    _backDotView.frame = CGRectMake(0, 0, backSizeDot, backSizeDot);
+    _backDotView.center = CGPointMake(self.frame.size.width / 2. - 1, self.frame.size.height - backSizeDot * 1.5 - 2);
+    _backDotView.layer.cornerRadius = backSizeDot / 2.;
     _backTopTextLabel.frame = CGRectMake(0, 0, _backCircleView.bounds.size.width, _backCircleView.bounds.size.height / 3);
     _backBottomTextLabel.frame = CGRectMake(0, _backCircleView.bounds.size.height / 3, _backCircleView.bounds.size.width, _backCircleView.bounds.size.height / 3 * 2);
     
