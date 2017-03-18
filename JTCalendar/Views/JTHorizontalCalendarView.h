@@ -13,6 +13,10 @@
 
 @property (nonatomic, weak) JTCalendarManager *manager;
 
+@property (nonatomic) UIView *leftView;
+@property (nonatomic) UIView *centerView;
+@property (nonatomic) UIView *rightView;
+
 @property (nonatomic) NSDate *date;
 
 /*!

@@ -12,7 +12,7 @@
 #define NUMBER_OF_DAY_BY_WEEK 7.
 
 @interface JTCalendarWeekView (){
-    NSMutableArray *_daysViews;
+    
 }
 
 @end

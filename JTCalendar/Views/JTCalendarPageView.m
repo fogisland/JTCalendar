@@ -13,7 +13,7 @@
 
 @interface JTCalendarPageView (){
     UIView<JTCalendarWeekDay> *_weekDayView;
-    NSMutableArray *_weeksViews;
+    
     NSUInteger _numberOfWeeksDisplayed;
 }
 

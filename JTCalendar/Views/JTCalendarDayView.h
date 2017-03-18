@@ -16,9 +16,13 @@
 @property (nonatomic) NSDate *date;
 
 @property (nonatomic, readonly) UIView *circleView;
-@property (nonatomic, readonly) UIView *rectangleView;
 @property (nonatomic, readonly) UIView *dotView;
 @property (nonatomic, readonly) UILabel *textLabel;
+
+@property (nonatomic, readonly) UIView *backCircleView;
+@property (nonatomic, readonly) UILabel *backTopTextLabel;
+@property (nonatomic, readonly) UIView *backSeperateLine;
+@property (nonatomic, readonly) UILabel *backBottomTextLabel;
 
 @property (nonatomic) CGFloat circleRatio;
 @property (nonatomic) CGFloat dotRatio;

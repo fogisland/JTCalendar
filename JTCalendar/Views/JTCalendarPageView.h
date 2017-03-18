@@ -12,6 +12,7 @@
 @interface JTCalendarPageView : UIView<JTCalendarPage>
 
 @property (nonatomic, weak) JTCalendarManager *manager;
+@property (nonatomic) NSMutableArray *weeksViews;
 
 @property (nonatomic) NSDate *date;
 
