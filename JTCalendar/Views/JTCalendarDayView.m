@@ -43,6 +43,7 @@
     _dotRatio = 1. / 12.;
     _backDotRatio = 1. / 15.;
     self.backgroundColor = [UIColor clearColor];
+    UIColor *black = [UIColor colorWithRed:.2 green:.2 blue:.2 alpha:1];
     
     {
         _backCircleView = [UIView new];
@@ -60,7 +61,7 @@
         _backTopTextLabel = [UILabel new];
         [_backCircleView addSubview:_backTopTextLabel];
         
-        _backTopTextLabel.textColor = [UIColor blackColor];
+        _backTopTextLabel.textColor = black;
         _backTopTextLabel.textAlignment = NSTextAlignmentCenter;
         _backTopTextLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize] - 1];
     }
@@ -68,14 +69,14 @@
         _backBottomTextLabel = [UILabel new];
         [_backCircleView addSubview:_backBottomTextLabel];
         
-        _backBottomTextLabel.textColor = [UIColor blackColor];
+        _backBottomTextLabel.textColor = black;
         _backBottomTextLabel.textAlignment = NSTextAlignmentCenter;
         _backBottomTextLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize] + 1];
     }
     {
         _backSeperateLine = [UIView new];
         [_backCircleView addSubview:_backSeperateLine];
-        _backSeperateLine.backgroundColor = [UIColor blackColor];
+        _backSeperateLine.backgroundColor = black;
     }
     {
         _backDotView = [UIView new];
@@ -114,7 +115,7 @@
         _textLabel = [UILabel new];
         [_circleView addSubview:_textLabel];
         
-        _textLabel.textColor = [UIColor blackColor];
+        _textLabel.textColor = black;
         _textLabel.textAlignment = NSTextAlignmentCenter;
         _textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     }
