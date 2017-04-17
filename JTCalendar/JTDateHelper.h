@@ -10,6 +10,7 @@
 @interface JTDateHelper : NSObject
 
 - (NSCalendar *)calendar;
+- (void)setFirstWeekday:(NSInteger)weekday;
 - (NSDateFormatter *)createDateFormatter;
 
 - (NSDate *)addToDate:(NSDate *)date months:(NSInteger)months;

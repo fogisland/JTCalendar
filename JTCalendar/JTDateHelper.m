@@ -30,6 +30,11 @@
     return _calendar;
 }
 
+- (void)setFirstWeekday:(NSInteger)weekday
+{
+    self.calendar.firstWeekday = weekday;
+}
+
 - (NSDateFormatter *)createDateFormatter
 {
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
